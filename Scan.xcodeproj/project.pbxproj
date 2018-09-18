@@ -16,6 +16,8 @@
 		8EAD373B21518863002DE051 /* ScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD373A21518863002DE051 /* ScanTests.swift */; };
 		8EAD374621518863002DE051 /* ScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD374521518863002DE051 /* ScanUITests.swift */; };
 		8EAD375421518B4A002DE051 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD375321518B4A002DE051 /* ListVC.swift */; };
+		8EAD375A21519E54002DE051 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD375921519E54002DE051 /* FavoritesVC.swift */; };
+		8EAD375C21519EA7002DE051 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD375B21519EA7002DE051 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		8EAD374521518863002DE051 /* ScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanUITests.swift; sourceTree = "<group>"; };
 		8EAD374721518863002DE051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EAD375321518B4A002DE051 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		8EAD375921519E54002DE051 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		8EAD375B21519EA7002DE051 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +107,12 @@
 			children = (
 				8EAD372221518862002DE051 /* AppDelegate.swift */,
 				8EAD372421518862002DE051 /* CameraVC.swift */,
+				8EAD375921519E54002DE051 /* FavoritesVC.swift */,
 				8EAD372621518862002DE051 /* Main.storyboard */,
 				8EAD375321518B4A002DE051 /* ListVC.swift */,
 				8EAD372C21518863002DE051 /* Assets.xcassets */,
 				8EAD372E21518863002DE051 /* LaunchScreen.storyboard */,
+				8EAD375B21519EA7002DE051 /* GoogleService-Info.plist */,
 				8EAD373121518863002DE051 /* Info.plist */,
 				8EAD372921518862002DE051 /* Scan.xcdatamodeld */,
 			);
@@ -236,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EAD373021518863002DE051 /* LaunchScreen.storyboard in Resources */,
+				8EAD375C21519EA7002DE051 /* GoogleService-Info.plist in Resources */,
 				8EAD372D21518863002DE051 /* Assets.xcassets in Resources */,
 				8EAD372821518862002DE051 /* Main.storyboard in Resources */,
 			);
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAD375A21519E54002DE051 /* FavoritesVC.swift in Sources */,
 				8EAD375421518B4A002DE051 /* ListVC.swift in Sources */,
 				8EAD372521518862002DE051 /* CameraVC.swift in Sources */,
 				8EAD372321518862002DE051 /* AppDelegate.swift in Sources */,

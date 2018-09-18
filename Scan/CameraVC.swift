@@ -20,6 +20,21 @@ class CameraVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        launchCamera()
+    }
 
 }
 
+extension CameraVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func launchCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+}

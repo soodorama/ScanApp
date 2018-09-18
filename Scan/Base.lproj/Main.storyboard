@@ -24,27 +24,48 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a6l-w2-ddD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EQK-Cm-MuA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="5xH-Up-czP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EQK-Cm-MuA" secondAttribute="trailing" constant="8" id="N8q-KH-HNg"/>
-                            <constraint firstItem="a6l-w2-ddD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zyd-Vo-766"/>
                             <constraint firstItem="EQK-Cm-MuA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="fPV-M0-wQs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a6l-w2-ddD" secondAttribute="bottom" id="gcq-RV-2NY"/>
-                            <constraint firstItem="a6l-w2-ddD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kM4-iW-6I8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a6l-w2-ddD" secondAttribute="trailing" id="qOd-H4-VqN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="camera_empty" id="VXY-Vo-dsX"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="camera_empty" selectedImage="camera_full" id="VXY-Vo-dsX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="-222"/>
+            <point key="canvasLocation" x="1068" y="-322"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="wia-7I-lyx">
+            <objects>
+                <viewController id="eZv-gz-9SL" customClass="FavoritesVC" customModule="Scan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1uY-dW-8p0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-B8-rWh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CF8-WH-ALG" firstAttribute="bottom" secondItem="6xJ-B8-rWh" secondAttribute="bottom" id="MiK-BK-M9w"/>
+                            <constraint firstItem="CF8-WH-ALG" firstAttribute="trailing" secondItem="6xJ-B8-rWh" secondAttribute="trailing" id="UuR-vr-PEf"/>
+                            <constraint firstItem="6xJ-B8-rWh" firstAttribute="leading" secondItem="CF8-WH-ALG" secondAttribute="leading" id="qfn-Em-drV"/>
+                            <constraint firstItem="6xJ-B8-rWh" firstAttribute="top" secondItem="CF8-WH-ALG" secondAttribute="top" id="tHi-ji-Mn4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CF8-WH-ALG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star_empty" selectedImage="star_full" id="qMF-9G-pf8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2h-lQ-Xzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="534"/>
         </scene>
         <!--My Cart-->
         <scene sceneID="6jg-X7-qAH">
@@ -94,11 +115,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6e2-ML-u8O"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Cart" image="cart_empty" id="e98-by-FbR"/>
+                    <tabBarItem key="tabBarItem" title="My Cart" image="cart_empty" selectedImage="cart_full" id="e98-by-FbR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zec-h3-t7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="466"/>
+            <point key="canvasLocation" x="1841" y="80"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZhA-gO-eSz">
@@ -106,12 +127,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Jf0-o1-WpI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bKs-ZG-aXw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qgw-yS-4j1"/>
                         <segue destination="1uD-7A-SlZ" kind="relationship" relationship="viewControllers" id="t1F-4R-JXd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qgw-yS-4j1"/>
+                        <segue destination="eZv-gz-9SL" kind="relationship" relationship="viewControllers" id="DpT-Vp-kDF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjv-VW-4w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,6 +144,10 @@
     </scenes>
     <resources>
         <image name="camera_empty" width="32" height="32"/>
+        <image name="camera_full" width="32" height="32"/>
         <image name="cart_empty" width="32" height="32"/>
+        <image name="cart_full" width="32" height="32"/>
+        <image name="star_empty" width="32" height="32"/>
+        <image name="star_full" width="32" height="32"/>
     </resources>
 </document>
