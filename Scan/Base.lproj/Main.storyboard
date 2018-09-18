@@ -40,7 +40,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" selectedImage="camera_empty" id="VXY-Vo-dsX"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="camera_empty" id="VXY-Vo-dsX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,7 +13,7 @@ class CameraVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        camera()
+        
     }
 
     override func didReceiveMemoryWarning() {
