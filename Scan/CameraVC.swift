@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CameraVC.swift
 //  Scan
 //
 //  Created by Neil Sood on 9/18/18.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CameraVC: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        camera()
     }
 
     override func didReceiveMemoryWarning() {
