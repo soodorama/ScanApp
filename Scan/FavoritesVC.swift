@@ -92,4 +92,10 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
         
         return [remove]
     }
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
+    }
 }

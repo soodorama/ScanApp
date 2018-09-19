@@ -152,7 +152,9 @@ class CameraVC: UIViewController {
                             product.isFavorited = false
                             product.price = data["salePrice"] as! Double
                             product.upc = data["upc"] as! String
-                            
+                            product.isInStock = (data["stock"] != nil)
+                            product.isOnClearance = (data["clearance"] != nil)
+                            product.desc = data["longDescription"] as! String
                             self.tableData.insert(product, at: 0)
                             
                             do {

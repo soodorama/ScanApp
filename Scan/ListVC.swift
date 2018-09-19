@@ -51,7 +51,22 @@ class ListVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nav = segue.destination as! UINavigationController
         let controller = nav.topViewController as! DisplayVC
-//        controller.delegate = self
+        controller.delegate = self
+        
+        let indexPath = sender as! IndexPath
+        let data = tableData[indexPath.row]
+        controller.data["imageURL"] = data.imageURL
+        controller.data["price"] = String(data.price)
+        controller.data["brand"] = data.brand
+        controller.data["stock"] = data.isInStock ? "In Stock" : "Not in Stock"
+        controller.data["clearance"] = data.isOnClearance ? "Clearance" : "Regular Sale"
+        controller.data["desc"] = data.desc
+        controller.data["name"] = data.name
+//        controller.delegate.data = data
+//        controller.imageUrl = data.imageURL
+        
+//        controller.imag.text = tableData[indexPath.row].name
+        
     }
 }
 
@@ -95,13 +110,17 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         
         return [delete, add]
     }
-//    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
-//    }
+
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
+    }
+}
+
+extension ListVC: DisplayVCDelegate {
+    func backBtnPressed() {
+        dismiss(animated: true, completion: nil)
     }
 }
