@@ -46,6 +46,23 @@ class FavoritesVC: UIViewController {
         }
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as! UINavigationController
+        let controller = nav.topViewController as! DisplayVC
+        controller.delegate = self
+        
+        let indexPath = sender as! IndexPath
+        let data = tableData[indexPath.row]
+        controller.data["imageURL"] = data.imageURL
+        controller.data["price"] = String(data.price)
+        controller.data["brand"] = data.brand
+        controller.data["stock"] = data.isInStock ? "In Stock" : "Not in Stock"
+        controller.data["clearance"] = data.isOnClearance ? "Clearance" : "Regular Sale"
+        controller.data["desc"] = data.desc
+        controller.data["name"] = data.name
+        
+    }
 
 }
 
@@ -97,5 +114,11 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "ToDisplaySegue", sender: indexPath)
+    }
+}
+
+extension FavoritesVC: DisplayVCDelegate {
+    func backBtnPressed() {
+        dismiss(animated: true, completion: nil)
     }
 }

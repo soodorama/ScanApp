@@ -155,11 +155,14 @@ class CameraVC: UIViewController {
                             product.isInStock = (data["stock"] != nil)
                             product.isOnClearance = (data["clearance"] != nil)
                             product.desc = data["longDescription"] as! String
-                            self.tableData.insert(product, at: 0)
+                            product.imageURL = data["largeImage"] as! String
                             
+                            self.tableData.insert(product, at: 0)
+                            print(product.imageURL)
                             do {
                                 try self.context.save()
                                 print("SAVED")
+                                
                             } catch {
                                 print("\(error)")
                             }                        }

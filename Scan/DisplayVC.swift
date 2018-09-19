@@ -34,6 +34,17 @@ class DisplayVC: UIViewController {
         clearanceLabel.text = data["clearance"]
         stockLabel.text = data["stock"]
         
+        let imageString = data["imageURL"]
+        print(imageString)
+        let imageURL = URL(string: imageString!)
+
+        if let data = try? Data(contentsOf: imageURL!)
+        {
+            let image: UIImage = UIImage(data: data)!
+            imageView.image = image
+        }
+        
+        
         guard let desc = data["desc"] else { return }
         print(desc)
         
@@ -74,3 +85,4 @@ class DisplayVC: UIViewController {
     
 
 }
+

@@ -62,10 +62,6 @@ class ListVC: UIViewController {
         controller.data["clearance"] = data.isOnClearance ? "Clearance" : "Regular Sale"
         controller.data["desc"] = data.desc
         controller.data["name"] = data.name
-//        controller.delegate.data = data
-//        controller.imageUrl = data.imageURL
-        
-//        controller.imag.text = tableData[indexPath.row].name
         
     }
 }
