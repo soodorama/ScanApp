@@ -8,6 +8,7 @@ target 'Scan' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionBarcodeModel'
+  
   # Pods for Scan
 
   target 'ScanTests' do

@@ -2,8 +2,8 @@
 //  FavoritesVC.swift
 //  Scan
 //
-//  Created by Neil Sood on 9/18/18.
-//  Copyright © 2018 Neil Sood. All rights reserved.
+//  Created by Isabell Frischmann on 9/18/18.
+//  Copyright © 2018 Isabell Frischmann. All rights reserved.
 //
 
 import UIKit
@@ -93,7 +93,7 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let remove = UITableViewRowAction(style: .normal, title: "remove") { action, index in
+        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
             self.tableData[indexPath.row].isFavorited = false
             
             do {

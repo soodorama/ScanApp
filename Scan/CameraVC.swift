@@ -2,8 +2,8 @@
 //  CameraVC.swift
 //  Scan
 //
-//  Created by Neil Sood on 9/18/18.
-//  Copyright © 2018 Neil Sood. All rights reserved.
+//  Created by Isabell Frischmann on 9/18/18.
+//  Copyright © 2018 Isabell Frischmann. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,6 @@ class CameraVC: UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
-    
     
 //    var delegate: WalmartItemDelegate?
     
@@ -41,7 +40,7 @@ class CameraVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get the back-facing camera for capturing videos
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
 //        delegate = self
         

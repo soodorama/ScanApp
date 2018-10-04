@@ -7,26 +7,6 @@
  *  Detector constants.
  */
 
-/**
- * @enum GMVResultCoordinateSpace
- * This enumeration specifies the detection result coordinate space.
- */
-typedef NS_ENUM(NSInteger, GMVResultCoordinateSpace) {
-  /**
-   * This enumeration specifies the detection results which are in the CaptureDevice coordinate
-   * space. The coordinates are rotated / flipped based on the EXIF information. The coordinates
-   * are scaled based on detection buffer / image. The result coordinates need to be scaled properly
-   * based on the video gravity to display correctly in the AVCaptureVideoPreviewLayer.
-   */
-  GMVResultCaptureDeviceEXIFCoordinateSpace = 1,
-  /**
-   * This enumeration specifies the detection results which are in CaptureDevice coordinate space.
-   * It should be used with pointForCaptureDevicePointOfInterest: to convert to the
-   * AVCaptureVideoPreviewLayer coordinate space.
-   */
-  GMVResultCaptureDeviceCoordinateSpace = 2
-};
-
 /** Possible error codes returned by GMVDetector. */
 typedef NS_ENUM(NSInteger, GMVDetectorError) {
   GMVDetectorInvalidInput = -301
@@ -87,7 +67,12 @@ typedef NS_ENUM(NSInteger, GMVDetectorFaceModeOption) {
    * Face detection mode code indicating detect more faces and may be more precise in determining
    * values such as position, at the cost of speed.
    */
-  GMVDetectorFaceAccurateMode = 201
+  GMVDetectorFaceAccurateMode = 201,
+  /**
+   *  Face detection mode code indicating detect predominant faces appeared in self-photography
+   *  style and may be not detecting smaller and further away faces.
+   */
+  GMVDetectorFaceSelfieMode = 202
 };
 
 /**
@@ -102,7 +87,11 @@ typedef NS_OPTIONS(NSInteger, GMVDetectorFaceLandmark) {
   /**
    * Face landmark option indicating it performs all landmark detection.
    */
-  GMVDetectorFaceLandmarkAll = 1 << 1
+  GMVDetectorFaceLandmarkAll = 1 << 1,
+  /**
+   * Face landmark option indicating it performs contour detection.
+   */
+  GMVDetectorFaceLandmarkContour = 1 << 2
 };
 
 /**
@@ -424,18 +413,6 @@ extern NSString * const GMVDetectorFaceLandmarkType;
  * value of this key is an NSNumber wrapping a GMVImageOrientation.
  */
 extern NSString * const GMVDetectorImageOrientation;
-
-/**
- * @memberof GMVDetector
- * A key used to specify the coordinate space of detection results. The value of this key is
- * an NSNumber wrapping a GMVResultCoordinateSpace. If not specified, it defaults to
- * GMVResultCaptureDeviceCoordinateSpace.
- *
- * Prior to 1.2.0, the GMVDetector always returns results in
- * GMVResultCaptureDeviceEXIFCoordinateSpace. This option exists as a migration option. The
- * detection results for future releases will only be in GMVResultCaptureDeviceCoordinateSpace.
- */
-extern NSString * const GMVDetectorResultCoordinateSpace __attribute__ ((deprecated));
 
 #pragma mark - Feature Types
 
