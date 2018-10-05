@@ -2,8 +2,8 @@
 //  DisplayVC.swift
 //  Scan
 //
-//  Created by Neil Sood on 9/18/18.
-//  Copyright © 2018 Neil Sood. All rights reserved.
+//  Created by Isabell Frischmann on 9/18/18.
+//  Copyright © 2018 Isabell Frischmann. All rights reserved.
 //
 
 import UIKit
