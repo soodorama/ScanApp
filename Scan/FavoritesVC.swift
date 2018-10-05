@@ -93,7 +93,7 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
+        let remove = UITableViewRowAction(style: .normal, title: "remove") { action, index in
             self.tableData[indexPath.row].isFavorited = false
             
             do {
