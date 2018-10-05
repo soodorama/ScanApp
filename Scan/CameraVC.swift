@@ -17,6 +17,7 @@ class CameraVC: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
     
+    
 //    var delegate: WalmartItemDelegate?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -40,7 +41,7 @@ class CameraVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get the back-facing camera for capturing videos
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
         
 //        delegate = self
         
